@@ -8,10 +8,10 @@
  * @return {null | never} Null if type isn't wrong or TypeError
  */
 
-export default function check(type: Function, value: unknown): null | never {
-    if (!type(value)) {
-        throw new TypeError('Type is wrong, see call history for more information');
-    }
+export default function check(type: (type: unknown) => type is unknown, value: unknown): null | never {
+	if (!type(value)) {
+		throw new TypeError("Type is wrong, see call history for more information")
+	}
 
-    return null;
+	return null
 }

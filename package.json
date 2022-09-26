@@ -9,9 +9,12 @@
   "scripts": {
     "test": "jest --config jest.config.ts --silent",
     "test:watch": "jest --config jest.config.ts --silent --watch",
-
     "build": "webpack --config webpack.prod.js",
-    "build:dev": "webpack --config webpack.dev.js"
+    "build:dev": "webpack --config webpack.dev.js",
+    "lint": "yarn run eslint --ext .ts,.tsx,.js,.jsx src",
+    "lint:fix": "yarn run eslint --ext .ts,.tsx,.js,.jsx src --fix",
+    "lint:root": "yarn run eslint --ext .ts,.tsx,.js,.jsx . --ignore-pattern src --ignore-pattern dist",
+    "lint:root:fix": "yarn run eslint --ext .ts,.tsx,.js,.jsx . --ignore-pattern src --ignore-pattern dist --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -23,9 +26,13 @@
     "@types/jest": "^29.0.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.0.3",

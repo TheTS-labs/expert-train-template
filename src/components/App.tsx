@@ -3,11 +3,11 @@ import { hot } from "react-hot-loader/root"
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import {typeCheckFor as typeFor} from "ts-type-checked"
+import { typeCheckFor as typeFor } from "ts-type-checked"
 import check from "../typeCheck"
 
 interface Props {
-   name: string
+	name: string
 }
 
 class App extends React.Component<Props> {
@@ -18,11 +18,9 @@ class App extends React.Component<Props> {
 
 		return (
 			<>
-				<h1>
-          Hello {name}
-				</h1>
+				<h1>Hello {name}</h1>
 				<button type="button" className="btn btn-primary">
-          This is a bootstrap button
+					This is a bootstrap button
 				</button>
 			</>
 		)

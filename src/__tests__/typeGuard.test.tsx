@@ -25,7 +25,9 @@ describe("Type guard test suite", () => {
 	})
 
 	it("Expected object(test: string) - given object(test: string)", () => {
-		expect(check(typeFor<{ test: string }>(), { test: "__TEST__" })).toBeNull()
+		expect(
+			check(typeFor<{ test: string }>(), { test: "__TEST__" })
+		).toBeNull()
 	})
 
 	it("Expected object(test: string) - given object(tset: string)", () => {

@@ -22,14 +22,11 @@ const config = {
 			{
 				test: /\.(js|jsx)$/,
 				use: "babel-loader",
-				exclude: /node_modules/
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.css$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					"css-loader"
-				]
+				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
 			{
 				test: /\.png$/,
@@ -37,47 +34,43 @@ const config = {
 					{
 						loader: "url-loader",
 						options: {
-							mimetype: "image/png"
-						}
-					}
-				]
+							mimetype: "image/png",
+						},
+					},
+				],
 			},
 			{
 				test: /\.scss$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					"css-loader",
-					"sass-loader"
-				]
+				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
 			},
 			{
 				test: /\.svg$/,
-				use: "file-loader"
+				use: "file-loader",
 			},
 			{
 				test: /\.ts(x)?$/,
 				use: [
 					{
-						loader: "ts-loader", 
+						loader: "ts-loader",
 						options: {
 							getCustomTransformers: program => ({
 								before: [transformer(program)],
 							}),
-						}, 
-					}
+						},
+					},
 				],
-				exclude: /node_modules/
-			}
-		]
+				exclude: /node_modules/,
+			},
+		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			templateContent: "./src/index.html",
 			filename: "index.html",
-			chunks: ["index"]
+			chunks: ["index"],
 		}),
-		new LodashModuleReplacementPlugin
+		new LodashModuleReplacementPlugin(),
 	],
 	optimization: {
 		runtimeChunk: "single",
@@ -86,21 +79,17 @@ const config = {
 				vendor: {
 					test: /[\\/]node_modules[\\/]/,
 					name: "vendors",
-					chunks: "all"
-				}
-			}
-		}
+					chunks: "all",
+				},
+			},
+		},
 	},
 	resolve: {
-		extensions: [
-			".tsx",
-			".ts",
-			".js"
-		],
+		extensions: [".tsx", ".ts", ".js"],
 		alias: {
-			"react-dom": "@hot-loader/react-dom"
-		}
-	}
+			"react-dom": "@hot-loader/react-dom",
+		},
+	},
 }
 
 module.exports = (env, argv) => {

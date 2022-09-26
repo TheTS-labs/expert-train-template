@@ -3,9 +3,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const transformer = require('ts-type-checked/transformer').default;
 
 const config = {
-  mode: 'development',
   entry: {
     hot_loader_patch: 'react-hot-loader/patch',
     index: './src/index.tsx',
@@ -54,7 +54,14 @@ const config = {
       {
         test: /\.ts(x)?$/,
         use: [
-          { loader: 'ts-loader' }
+          {
+            loader: 'ts-loader', 
+            options: {
+              getCustomTransformers: program => ({
+                before: [transformer(program)],
+              }),
+            }, 
+          }
         ],
         exclude: /node_modules/
       }
@@ -67,8 +74,7 @@ const config = {
       filename: 'index.html',
       chunks: ['index']
     }),
-    new LodashModuleReplacementPlugin,
-    new MiniCssExtractPlugin()
+    new LodashModuleReplacementPlugin
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -80,11 +86,6 @@ const config = {
           chunks: 'all'
         }
       }
-    }
-  },
-  devServer: {
-    'static': {
-      directory: './dist'
     }
   },
   resolve: {

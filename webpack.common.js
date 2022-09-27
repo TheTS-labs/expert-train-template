@@ -17,7 +17,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "[name].[hash].js",
+		filename: "[name].[chunkhash].js",
 	},
 	module: {
 		rules: [
@@ -61,11 +61,12 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			templateContent: "./src/index.html",
+			template: "./src/index.html",
 			filename: "index.html",
-			chunks: ["index", "hot_loader_patch"],
+			chunks: ["index", "shared"],
 		}),
 		new LodashModuleReplacementPlugin(),
+		new MiniCssExtractPlugin()
 	],
 	optimization: {
 		runtimeChunk: "single",

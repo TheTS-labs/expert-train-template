@@ -173,9 +173,9 @@ export default {
 	// testRunner: "jest-circus/runner",
 
 	// A map from regular expressions to paths to transformers
-	transform: {
-		"^.+\\.tsx?$": ["ts-jest", { compiler: "ttypescript" }],
-	},
+	// transform: {
+	// 	"^.+\\.tsx?$": ["ts-jest", { compiler: "ttypescript" }],
+	// },
 
 	// globals: {
 	//   'ts-jest': {

@@ -3,17 +3,12 @@ import { hot } from "react-hot-loader/root"
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import { typeCheckFor as typeFor } from "ts-type-checked"
-import check from "../typeCheck"
-
 interface Props {
 	name: string
 }
 
 class App extends React.Component<Props> {
 	render() {
-		check(typeFor<Props>(), this.props)
-
 		const { name } = this.props
 
 		return (

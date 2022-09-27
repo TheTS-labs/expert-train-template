@@ -6,16 +6,18 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const transformer = require("ts-type-checked/transformer").default
 
-const config = {
+module.exports = {
 	entry: {
-		hot_loader_patch: "react-hot-loader/patch",
-		index: "./src/index.tsx",
+		shared: ["react-hot-loader/patch"],
+		index: {
+			import: "./src/index.tsx",
+			dependOn: "shared"
+		},
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "[name].[contenthash].js",
+		filename: "[name].[hash].js",
 	},
 	module: {
 		rules: [
@@ -50,14 +52,7 @@ const config = {
 			{
 				test: /\.ts(x)?$/,
 				use: [
-					{
-						loader: "ts-loader",
-						options: {
-							getCustomTransformers: program => ({
-								before: [transformer(program)],
-							}),
-						},
-					},
+					{ loader: "ts-loader" },
 				],
 				exclude: /node_modules/,
 			},
@@ -68,7 +63,7 @@ const config = {
 		new HtmlWebpackPlugin({
 			templateContent: "./src/index.html",
 			filename: "index.html",
-			chunks: ["index"],
+			chunks: ["index", "hot_loader_patch"],
 		}),
 		new LodashModuleReplacementPlugin(),
 	],
@@ -90,13 +85,4 @@ const config = {
 			"react-dom": "@hot-loader/react-dom",
 		},
 	},
-}
-
-module.exports = (env, argv) => {
-	if (argv.hot) {
-		// Cannot use 'contenthash' when hot reloading is enabled.
-		config.output.filename = "[name].[hash].js"
-	}
-
-	return config
 }

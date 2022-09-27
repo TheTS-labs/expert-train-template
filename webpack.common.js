@@ -31,7 +31,7 @@ module.exports = {
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
 			{
-				test: /\.png$/,
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				use: [
 					{
 						loader: "url-loader",
@@ -51,10 +51,12 @@ module.exports = {
 			},
 			{
 				test: /\.ts(x)?$/,
-				use: [
-					{ loader: "ts-loader" },
-				],
+				use: "ts-loader",
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: "asset/resource",
 			},
 		],
 	},

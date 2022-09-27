@@ -31,8 +31,8 @@ jobs:
     - name: Dev Build
       run: yarn run build:dev
         
-    - name: Dev Build Server
-      run: yarn run build:dev:serve
+#     - name: Dev Build Server
+#       run: yarn run build:dev:serve
         
     - name: Test
       run: yarn run test

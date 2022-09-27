@@ -5,6 +5,7 @@ Webpack template for a quick start (TypeScript, React, Jest)
 
 ## Features
 
+- Docker
 - Prettier
 - ESlint
 - React 18
@@ -20,7 +21,9 @@ Webpack template for a quick start (TypeScript, React, Jest)
 
 ## Installation
 
-Install expert-train-template with yarn
+Install `nodejs`, `npm`, `git` and `yarn` in your system
+
+### Bash
 
 ```bash
     git clone git@github.com:TheTS-labs/expert-train-template.git
@@ -28,7 +31,16 @@ Install expert-train-template with yarn
     yarn install
 ```
 
+### Docker
+
+```bash
+    docker pull tsecret/expert-train-template:v1.1.0
+    docker run -d -t expert-train-template -p 8080:8080 tsecret/expert-train-template:v1.1.0
+```
+
 ## Usage
+
+### Commands
 
 - `yarn run build` - Build prodaction version
 - `yarn run build:dev` - Build develeopment version
@@ -38,6 +50,14 @@ Install expert-train-template with yarn
 - `yarn run lint` - Run ESlint
 - `yarn run lint:fix` - Run ESlint and fix fixable errors
 - `yarn run prettier` - Run Prettier
+
+### Usage of Docker
+
+Open shell: `docker exec -it expert-train-template /bin/bash`
+
+Or copy from container to local filesystem: `docker cp expert-train-template:/expert-train-template /local/path`
+
+You can also [open container in VSCode](https://code.visualstudio.com/docs/remote/containers)
 
 ## Support
 

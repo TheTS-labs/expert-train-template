@@ -21,9 +21,9 @@ Webpack template for a quick start (TypeScript, React, Jest)
 
 ## Installation
 
-Install `nodejs`, `npm`, `git` and `yarn` in your system
-
 ### Bash
+
+Install `nodejs`, `npm`, `git` and `yarn` in your system, and then run:
 
 ```bash
     git clone git@github.com:TheTS-labs/expert-train-template.git

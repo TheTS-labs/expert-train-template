@@ -3,7 +3,7 @@ name: Check Expert-Train Template work
 on: [pull_request, push]
 
 env:
-  work-dir: /
+  work-dir: ./
 
 jobs:
   buildProd:

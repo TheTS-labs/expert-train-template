@@ -12,7 +12,7 @@ module.exports = {
 		shared: ["react-hot-loader/patch"],
 		index: {
 			import: "./src/index.tsx",
-			dependOn: "shared"
+			dependOn: "shared",
 		},
 	},
 	output: {
@@ -66,10 +66,10 @@ module.exports = {
 			template: "./src/index.html",
 			filename: "index.html",
 			chunks: ["index", "shared"],
-			inject: false
+			inject: false,
 		}),
 		new LodashModuleReplacementPlugin(),
-		new MiniCssExtractPlugin()
+		new MiniCssExtractPlugin(),
 	],
 	optimization: {
 		runtimeChunk: "single",

@@ -1,23 +1,22 @@
-
 # Expert-Train Template
 
 Webpack template for a quick start (TypeScript, React, Jest)
 
 ## Features
 
-- Docker
-- Prettier
-- ESlint
-- React 18
-- Webpack 5
-- Typescript 4.8.3
-- Jest 29
-- Type Guard (io-ts)
-- Webpack Merge
-- Depcheck
-- `package.json` commands
-- Support for images (`.png`, `.svg`, `.jpg`, `.jpeg`, `.gif`)
-- Support for wonts (`.woff`, `.woff2`, `.eot`, `.ttf`, `.otf`)
+-   Docker
+-   Prettier
+-   ESlint
+-   React 18
+-   Webpack 5
+-   Typescript 4.8.3
+-   Jest 29
+-   Type Guard (io-ts)
+-   Webpack Merge
+-   Depcheck
+-   `package.json` commands
+-   Support for images (`.png`, `.svg`, `.jpg`, `.jpeg`, `.gif`)
+-   Support for wonts (`.woff`, `.woff2`, `.eot`, `.ttf`, `.otf`)
 
 ## Installation
 
@@ -42,14 +41,14 @@ Install `nodejs`, `npm`, `git` and `yarn` in your system, and then run:
 
 ### Commands
 
-- `yarn run build` - Build prodaction version
-- `yarn run build:dev` - Build develeopment version
-- `yarn run build:dev:serve` - Start develeopment server
-- `yarn run test` - Run Jest testing
-- `yarn run test:watch` - Run Jest testing in watch mode
-- `yarn run lint` - Run ESlint
-- `yarn run lint:fix` - Run ESlint and fix fixable errors
-- `yarn run prettier` - Run Prettier
+-   `yarn run build` - Build prodaction version
+-   `yarn run build:dev` - Build develeopment version
+-   `yarn run build:dev:serve` - Start develeopment server
+-   `yarn run test` - Run Jest testing
+-   `yarn run test:watch` - Run Jest testing in watch mode
+-   `yarn run lint` - Run ESlint
+-   `yarn run lint:fix` - Run ESlint and fix fixable errors
+-   `yarn run prettier` - Run Prettier
 
 ### Usage of Docker
 
@@ -63,8 +62,8 @@ You can also [open container in VSCode](https://code.visualstudio.com/docs/remot
 
 For support:
 
-- Email romantovt31@gmail.com
-- Or open an Issue
+-   Email romantovt31@gmail.com
+-   Or open an Issue
 
 ## Feedback
 
@@ -76,4 +75,4 @@ If you have any feedback, please reach out to us at romantovt31@gmail.com
 
 ## Authors
 
-- [@TheTS-labs](https://www.github.com/TheTS-labs)([Twitter](https://twitter.com/__TheTS__))
+-   [@TheTS-labs](https://www.github.com/TheTS-labs)([Twitter](https://twitter.com/__TheTS__))

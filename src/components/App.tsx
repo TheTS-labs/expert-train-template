@@ -8,7 +8,7 @@ import * as t from "io-ts"
 import typeSafe from "../typeSafe"
 
 const Props_def = t.type({
-	name: t.string
+	name: t.string,
 })
 
 class App extends React.Component<t.TypeOf<typeof Props_def>> {

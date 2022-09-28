@@ -3,120 +3,120 @@ name: Check Expert-Train Template work
 on: [pull_request, push]
 
 env:
-  work-dir: ./
+    work-dir: ./
 
 jobs:
-  buildProd:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
+    buildProd:
+        runs-on: ubuntu-latest
 
-    - name: Setup Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+        steps:
+            - uses: actions/checkout@v3
 
-    - name: Setup Yarn
-      run: corepack enable
+            - name: Setup Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-    - name: Install deps
-      working-directory: ${{env.work-dir}}
-      run: yarn install
+            - name: Setup Yarn
+              run: corepack enable
 
-    - name: Build prod
-      working-directory: ${{env.work-dir}}
-      run: yarn run build
-  buildDev:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
+            - name: Install deps
+              working-directory: ${{env.work-dir}}
+              run: yarn install
 
-    - name: Setup Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+            - name: Build prod
+              working-directory: ${{env.work-dir}}
+              run: yarn run build
+    buildDev:
+        runs-on: ubuntu-latest
 
-    - name: Setup Yarn
-      run: corepack enable
+        steps:
+            - uses: actions/checkout@v3
 
-    - name: Install deps
-      working-directory: ${{env.work-dir}}
-      run: yarn install
+            - name: Setup Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-    - name: Build dev
-      working-directory: ${{env.work-dir}}
-      run: yarn run build:dev
+            - name: Setup Yarn
+              run: corepack enable
 
-  runTests:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
+            - name: Install deps
+              working-directory: ${{env.work-dir}}
+              run: yarn install
 
-    - name: Setup Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+            - name: Build dev
+              working-directory: ${{env.work-dir}}
+              run: yarn run build:dev
 
-    - name: Setup Yarn
-      run: corepack enable
+    runTests:
+        runs-on: ubuntu-latest
 
-    - name: Install deps
-      working-directory: ${{env.work-dir}}
-      run: yarn install
+        steps:
+            - uses: actions/checkout@v3
 
-    - name: Run Tests
-      working-directory: ${{env.work-dir}}
-      run: yarn run test
+            - name: Setup Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-  runESlint:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
+            - name: Setup Yarn
+              run: corepack enable
 
-    - name: Setup Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+            - name: Install deps
+              working-directory: ${{env.work-dir}}
+              run: yarn install
 
-    - name: Setup Yarn
-      run: corepack enable
+            - name: Run Tests
+              working-directory: ${{env.work-dir}}
+              run: yarn run test
 
-    - name: Install deps
-      working-directory: ${{env.work-dir}}
-      run: yarn install
+    runESlint:
+        runs-on: ubuntu-latest
 
-    - name: Run ESlint
-      working-directory: ${{env.work-dir}}
-      run: yarn run lint
+        steps:
+            - uses: actions/checkout@v3
 
-  runPrettier:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
+            - name: Setup Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-    - name: Setup Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+            - name: Setup Yarn
+              run: corepack enable
 
-    - name: Setup Yarn
-      run: corepack enable
+            - name: Install deps
+              working-directory: ${{env.work-dir}}
+              run: yarn install
 
-    - name: Install deps
-      working-directory: ${{env.work-dir}}
-      run: yarn install
+            - name: Run ESlint
+              working-directory: ${{env.work-dir}}
+              run: yarn run lint
 
-    - name: Run Prettier
-      uses: creyD/prettier_action@v4.2
-      with:
-        dry: true
-        prettier_options: --check ${{env.work-dir}}
+    runPrettier:
+        runs-on: ubuntu-latest
 
-    - name: Check work of `prettier` command
-      working-directory: ${{env.work-dir}}
-      run: yarn run prettier --ignore-path .gitignore --check "**/*.+(js|ts|jsx|tsx)"
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            - name: Setup Yarn
+              run: corepack enable
+
+            - name: Install deps
+              working-directory: ${{env.work-dir}}
+              run: yarn install
+
+            - name: Run Prettier
+              uses: creyD/prettier_action@v4.2
+              with:
+                  dry: true
+                  prettier_options: --check ${{env.work-dir}}
+
+            - name: Check work of `prettier` command
+              working-directory: ${{env.work-dir}}
+              run: yarn run prettier --ignore-path .gitignore --check "**/*.+(js|ts|jsx|tsx)"

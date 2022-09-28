@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
-      <script defer src="{{url_for('static', filename='<%= htmlWebpackPlugin.files.js[i] %>')}}"></script>
-    <% } %>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <% for(var i=0; i < htmlWebpackPlugin.files.css.length; i++) {%>
-      <link href="{{url_for('static', filename='<%= htmlWebpackPlugin.files.css[i] %>')}}" rel="stylesheet">
-    <% } %>
-  </head>
-  <body>
-    <main>
-        <div id="app"></div>
-    </main>
-  </body>
+		<% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
+		<script
+			defer
+			src="{{url_for('static', filename='<%= htmlWebpackPlugin.files.js[i] %>')}}"
+		></script>
+		<% } %> <% for(var i=0; i < htmlWebpackPlugin.files.css.length; i++) {%>
+		<link
+			href="{{url_for('static', filename='<%= htmlWebpackPlugin.files.css[i] %>')}}"
+			rel="stylesheet"
+		/>
+		<% } %>
+	</head>
+	<body>
+		<main>
+			<div id="app"></div>
+		</main>
+	</body>
 </html>

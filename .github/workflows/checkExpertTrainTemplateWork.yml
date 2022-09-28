@@ -1,12 +1,12 @@
 name: Check Expert-Train Template work
 
-on: 
+on:
     push:
-        branches: 
+        branches:
             - main
     pull_request:
-        branches: 
-          - main
+        branches:
+            - main
 
 env:
     work-dir: ./

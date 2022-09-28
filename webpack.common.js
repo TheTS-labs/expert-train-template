@@ -66,6 +66,7 @@ module.exports = {
 			template: "./src/index.html",
 			filename: "index.html",
 			chunks: ["index", "shared"],
+			inject: false
 		}),
 		new LodashModuleReplacementPlugin(),
 		new MiniCssExtractPlugin()

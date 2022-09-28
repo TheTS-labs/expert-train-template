@@ -116,7 +116,3 @@ jobs:
               with:
                   dry: true
                   prettier_options: --check ${{env.work-dir}}
-
-            - name: Check work of `prettier` command
-              working-directory: ${{env.work-dir}}
-              run: yarn run prettier --ignore-path .gitignore --check "**/*.+(js|ts|jsx|tsx)"

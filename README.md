@@ -33,8 +33,8 @@ Install `nodejs`, `npm`, `git` and `yarn` in your system, and then run:
 ### Docker
 
 ```bash
-    docker pull tsecret/expert-train-template:v1.1.0
-    docker run -d -t expert-train-template -p 8080:8080 tsecret/expert-train-template:v1.1.0
+    docker pull ghcr.io/thets-labs/expert-train-template:latest
+    docker run -d -t expert-train-template -p 8080:8080 ghcr.io/thets-labs/expert-train-template
 ```
 
 ## Usage

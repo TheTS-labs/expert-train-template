@@ -6,15 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 		<% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
-		<script
-			defer
-			src="<%= htmlWebpackPlugin.files.js[i] %>"
-		></script>
+		<script defer src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
 		<% } %> <% for(var i=0; i < htmlWebpackPlugin.files.css.length; i++) {%>
-		<link
-			href="<%= htmlWebpackPlugin.files.css[i] %>"
-			rel="stylesheet"
-		/>
+		<link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet" />
 		<% } %>
 	</head>
 	<body>

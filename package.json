@@ -58,7 +58,7 @@
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.6",
-		"bootstrap": "^5.2.1",
+		"bootstrap": "^5.2.2",
 		"fp-ts": "^2.12.3",
 		"io-ts": "^2.2.18",
 		"lodash": "^4.17.21",

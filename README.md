@@ -7,10 +7,10 @@ Webpack template for a quick start (TypeScript, React, Jest)
 -   Docker
 -   Prettier
 -   ESlint
--   React 18
--   Webpack 5
--   Typescript 4.8.3
--   Jest 29
+-   React
+-   Webpack
+-   Typescript
+-   Jest
 -   Type Guard (io-ts)
 -   Webpack Merge
 -   Depcheck
